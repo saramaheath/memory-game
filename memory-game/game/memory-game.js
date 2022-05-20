@@ -46,7 +46,7 @@ function shuffle(items) {
 function createCards() {
   const gameBoard = document.getElementById("game");
   for (let i = 0; i < colors.length; i++) {
-    console.log(colors[i]);
+    //console.log(colors[i]);
     let newCard = document.createElement("div");
     newCard.setAttribute("class", colors[i]);
     newCard.setAttribute("id", i);
@@ -62,10 +62,10 @@ function flipCard() {
   let cardID = this.getAttribute("id");
   let cardClass = this.getAttribute("class");
   this.setAttribute("class", `${cardClass}-onclick`);
-  console.log(colors[cardID]);
+  //console.log(colors[cardID]);
   if (clickedCards.length < 2) {
     clickedCards.push(colors[cardID]);
-    console.log(clickedCards);
+    //console.log(clickedCards);
     clickedCardsID.push(cardID);
   }
   if (clickedCards.length === 2) {
@@ -81,7 +81,7 @@ function unFlipCard() {
     cards[clickedCardsID[1]].setAttribute("class", clickedCards[1]);
 
   }
-  console.log("this is the unflip function being called");
+  //console.log("this is the unflip function being called");
 }
 
 function checkClicks(){
@@ -94,7 +94,7 @@ function checkClicks(){
         clickedCards = [];
         clickedCardsID = [];
       }
-      console.log(clickCount, 'clicks in check clicks');
+      //console.log(clickCount, 'clicks in check clicks');
       clickCount = 0;
     }
   }
@@ -106,17 +106,17 @@ function checkClickedCards() {
     clickedCards[0] !== clickedCards[1] ||
     clickedCardsID[0] === clickedCardsID[1]
   ) {
-    console.log(clickedCards, "clicked cards");
-    console.log("not a match");
+    //console.log(clickedCards, "clicked cards");
+    //console.log("not a match");
     unFlipCard();
   } else {
-    console.log("matched");
+    //console.log("matched");
     cards[clickedCardsID[0]].removeEventListener("click", flipCard);
     cards[clickedCardsID[1]].removeEventListener("click", flipCard);
     matchedCards.push(clickedCardsID[0], clickedCardsID[1]);
-    console.log(matchedCards);
+    //console.log(matchedCards);
   }
-  console.log(clickCount, 'clicks in checkclickedcards');
+  //console.log(clickCount, 'clicks in checkclickedcards');
   clickCount = 0;
   clickedCards = [];
   clickedCardsID = [];
