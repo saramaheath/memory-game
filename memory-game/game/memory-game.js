@@ -87,7 +87,7 @@ function unFlipCard() {
 function checkClicks(){
   let cards = document.querySelectorAll("div");
   if (clickCount > 1) {
-    alert("too many clicks! You may only click two cards");
+    alert("Too many clicks! You may only click two cards");
     for (let i = 0; i < colors.length; i++) {
       if (!matchedCards.includes(cards[i].getAttribute("id"))) {
         cards[i].setAttribute("class", colors[i]);
